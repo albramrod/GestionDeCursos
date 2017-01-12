@@ -83,7 +83,7 @@ Alumno.prototype = Object.create(Alumno.prototype);
 
 Alumno.prototype.toHTMLRow = function(){
 
-	var tdDatosAlumno=    "<td>" + this.sDni + "</td>"
+	var tdDatosAlumno=     "<td>" + this.sDni + "</td>"
 					 	  + "<td>" + this.sNombre + "</td>"
 	  					  + "<td>" + this.sApellido + "</td>"
 	   				 	  + "<td>" + this.dFechaNacimiento + "</td>"
@@ -95,16 +95,67 @@ Alumno.prototype.toHTMLRow = function(){
 	//recorremos las asignaturas del profesor y almacenarlas en td
 	var tdDatosNota = "<td>";
 	for (var i = 0; i < this.aNotas.length; i++) {
-	  		 	
-	    tdDatosNota+= this.aNotas[i].sNombreNota+"\n";
+	  		 	 
+	    tdDatosNota += this.aNotas[i].sNombreNota;
 	}  		
 	tdDatosNota += "<td/>"; 
 
-	var tdAlumno= tdDatosProfesor+tdDatosNota;
+	var tdAlumno = tdDatosAlumno+tdDatosNota;
 
 
-	return tdProfesor;
+	return tdAlumno;
 
 }
 //********** Fin Objeto Alumno **********
+
+
+
+//------------Objeto Curso--------------
+function Curso(id,sNombre,dFecha_ini,dFecha_fin,sDescripcion,asignaturas,grupos,fPrecio){
+	this.id=id;
+	this.sNombre=sNombre;
+	this.dFecha_ini=dFecha_ini;
+	this.dFecha_fin=dFecha_fin;
+	this.sDescripcion=sDescripcion;
+	this.asignaturas=asignaturas;
+	this.grupos=grupos;
+	this.fPrecio=fPrecio;
+}
+Curso.prototype.toHTMLRow=function(){
+	
+	return    "<td>" + this.id + "</td>"
+			+ "<td>" + this.sNombre + "</td>"
+	  		+ "<td>" + this.dFecha_ini + "</td>"
+	   		+ "<td>" + this.dFecha_fin + "</td>"
+	   		+ "<td>" + this.sDescripcion + "</td>"
+	   		+ "<td>" + this.fPrecio + "</td>";
+
+}
+//------------Objeto Centro--------------
+function Centro(id,sNombre,cursos,sLocalizacion){
+	this.id=id;
+	this.sNombre=sNombre;
+	this.cursos=cursos;
+	this.sLocalizacion=sLocalizacion;
+
+}
+Centro.prototype.toHTMLRow = function(){
+	return    "<td>" + this.id + "</td>"
+			+ "<td>" + this.sNombre + "</td>"
+	  		+ "<td>" + this.sLocalizacion + "</td>";
+	   		
+}
+//------------Objeto Grupo--------------
+function Grupo(id,sNombre,alumnos){
+	this.id=id;
+	this.sNombre=sNombre;
+	this.alumnos=alumnos;
+
+}
+Grupo.prototype.toHTMLRow = function(){
+	return    "<td>" + this.id + "</td>"
+			+ "<td>" + this.sNombre + "</td>"
+	  		+ "<td>" + this.alumnos + "</td>";
+	   		
+}
 
