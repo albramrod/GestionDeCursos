@@ -100,6 +100,8 @@ document.formuBajaCurso.btnEnviarBajaCurso.addEventListener('click',validarBajaC
 document.formuBajaCentro.btnEnviarBajaCentro.addEventListener('click',validarBajaCentro);
 document.formuBajaAsignatura.btnEnviarBajaAsignatura.addEventListener('click',validarBajaAsignatura);
 
+document.formuAltaAlum.btnResetearAltaAlumno.addEventListener('click',borrarAltaAlumno);
+
 
 function validarAltaAlumno(){
 	var s="";
@@ -123,7 +125,7 @@ function validarAltaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nDni incorrecto";
+        sErrores += "\nDni incorrecto<br>";
         
         //Marcar error
         oForm.dni_Alumno.className = "form-control input-md error";
@@ -144,7 +146,7 @@ function validarAltaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nNombre incorrecto";
+        sErrores += "\nNombre incorrecto<br>";
         
         //Marcar error
         oForm.nombre_Alumno.className = "form-control input-md error";
@@ -165,7 +167,7 @@ function validarAltaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nApellidos incorrectos";
+        sErrores += "\nApellidos incorrectos<br>";
         
         //Marcar error
         oForm.apellidos_Alumno.className = "form-control input-md error";
@@ -186,7 +188,7 @@ function validarAltaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nTeléfono incorrecto";
+        sErrores += "\nTeléfono incorrecto<br>";
         
         //Marcar error
         oForm.telefono_Alumno.className = "form-control input-md error";
@@ -207,7 +209,7 @@ function validarAltaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nEdad incorrecta";
+        sErrores += "\nEdad incorrecta<br>";
         
         //Marcar error
         oForm.edad_Alumno.className = "form-control input-md error";
@@ -228,7 +230,7 @@ function validarAltaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nDirección incorrecta";
+        sErrores += "\nDirección incorrecta<br>";
         
         //Marcar error
         oForm.direccion_Alumno.className = "form-control input-md error";
@@ -246,7 +248,25 @@ function validarAltaAlumno(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
+
+}
+
+function borrarAltaAlumno(){
+    var oForm = document.formuAltaAlum;
+    var dni = oForm.dni_Alumno.value;
+    var nombre = oForm.nombre_Alumno.value;
+    var apellidos = oForm.apellidos_Alumno.value;
+    var telefono = oForm.telefono_Alumno.value;
+    var edad = oForm.edad_Alumno.value;
+    var direccion = oForm.direccion_Alumno.value;
+    
+    oForm.dni_Alumno.className = "form-control";
+    oForm.nombre_Alumno.className = "form-control";
+    oForm.apellidos_Alumno.className = "form-control";
+    oForm.telefono_Alumno.className = "form-control";    
+    oForm.edad_Alumno.className = "form-control";    
+    oForm.direccion_Alumno.className = "form-control";   
 
 }
 
@@ -272,7 +292,7 @@ function validarAltaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nDni incorrecto";
+        sErrores += "\nDni incorrecto<br>";
         
         //Marcar error
         oForm.dni_Profesor.className = "form-control input-md error";
@@ -293,7 +313,7 @@ function validarAltaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nNombre incorrecto";
+        sErrores += "\nNombre incorrecto<br>";
         
         //Marcar error
         oForm.nombre_Profesor.className = "form-control input-md error";
@@ -314,7 +334,7 @@ function validarAltaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nApellidos incorrectos";
+        sErrores += "\nApellidos incorrectos<br>";
         
         //Marcar error
         oForm.apellidos_Profesor.className = "form-control input-md error";
@@ -335,7 +355,7 @@ function validarAltaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nTeléfono incorrecto";
+        sErrores += "\nTeléfono incorrecto<br>";
         
         //Marcar error
         oForm.telefono_Profesor.className = "form-control input-md error";
@@ -356,7 +376,7 @@ function validarAltaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nEdad incorrecta";
+        sErrores += "\nEdad incorrecta<br>";
         
         //Marcar error
         oForm.edad_Profesor.className = "form-control input-md error";
@@ -377,7 +397,7 @@ function validarAltaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nDirección incorrecta";
+        sErrores += "\nDirección incorrecta<br>";
         
         //Marcar error
         oForm.direccion_Profesor.className = "form-control input-md error";
@@ -395,7 +415,7 @@ function validarAltaProfesor(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarAltaGrupo(){
@@ -417,7 +437,7 @@ function validarAltaGrupo(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Grupo.className = "form-control input-md error";
@@ -438,7 +458,7 @@ function validarAltaGrupo(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nNombre incorrecto";
+        sErrores += "\nNombre incorrecto<br>";
         
         //Marcar error
         oForm.nombre_Grupo.className = "form-control input-md error";
@@ -455,7 +475,7 @@ function validarAltaGrupo(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarAltaCurso(){
@@ -479,7 +499,7 @@ function validarAltaCurso(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Curso.className = "form-control input-md error";
@@ -500,7 +520,7 @@ function validarAltaCurso(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nNombre incorrecto";
+        sErrores += "\nNombre incorrecto<br>";
         
         //Marcar error
         oForm.nombre_Curso.className = "form-control input-md error";
@@ -521,7 +541,7 @@ function validarAltaCurso(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nDescripción incorrecta";
+        sErrores += "\nDescripción incorrecta<br>";
         
         //Marcar error
         oForm.descripcion_Curso.className = "form-control input-md error";
@@ -542,7 +562,7 @@ function validarAltaCurso(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nPrecio incorrecto";
+        sErrores += "\nPrecio incorrecto<br>";
         
         //Marcar error
         oForm.precio_Curso.className = "form-control input-md error";
@@ -560,7 +580,7 @@ function validarAltaCurso(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarAltaCentro(){
@@ -582,7 +602,7 @@ function validarAltaCentro(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Centro.className = "form-control input-md error";
@@ -603,7 +623,7 @@ function validarAltaCentro(){
             // top.frames[1].document.frmAltaPaciente.txtNombrePaciente.focus();       
         }
     
-        sErrores += "\nNombre incorrecto";
+        sErrores += "\nNombre incorrecto<br>";
         
         //Marcar error
         oForm.nombre_Centro.className = "form-control input-md error";
@@ -624,7 +644,7 @@ function validarAltaCentro(){
             // top.frames[1].document.frmAltaPaciente.txtNumSegSocial.focus();       
         }
     
-        sErrores += "\nLocalización incorrecta";
+        sErrores += "\nLocalización incorrecta<br>";
         
         //Marcar error
         oForm.localizacion_Centro.className = "form-control input-md error";
@@ -641,7 +661,7 @@ function validarAltaCentro(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 }
 function validarAltaAsignatura(){
     var s="";
@@ -662,7 +682,7 @@ function validarAltaAsignatura(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Asignatura.className = "form-control input-md error";
@@ -701,7 +721,7 @@ function validarAltaAsignatura(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 }
 /*------Funciones validad bajas*/
 function validarBajaAlumno(){
@@ -721,7 +741,7 @@ function validarBajaAlumno(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nDni incorrecto";
+        sErrores += "Dni incorrecto<br>";
         
         //Marcar error
         oForm.dni_Alumno.className = "form-control input-md error";
@@ -738,7 +758,7 @@ function validarBajaAlumno(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaProfesor(){
@@ -758,7 +778,7 @@ function validarBajaProfesor(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nDni incorrecto";
+        sErrores += "\nDni incorrecto<br>";
         
         //Marcar error
         oForm.dni_Profesor.className = "form-control input-md error";
@@ -775,7 +795,7 @@ function validarBajaProfesor(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaCurso(){
@@ -797,7 +817,7 @@ function validarBajaCurso(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Curso.className = "form-control input-md error";
@@ -816,7 +836,7 @@ function validarBajaCurso(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaGrupo(){
@@ -838,7 +858,7 @@ function validarBajaGrupo(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Grupo.className = "form-control input-md error";
@@ -857,7 +877,7 @@ function validarBajaGrupo(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaCentro(){
@@ -879,7 +899,7 @@ function validarBajaCentro(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Centro.className = "form-control input-md error";
@@ -898,7 +918,7 @@ function validarBajaCentro(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaAsignatura(){
@@ -920,7 +940,7 @@ function validarBajaAsignatura(){
             // top.frames[1].document.frmAltaPaciente.txtNIFPaciente.focus();       
         }
     
-        sErrores += "\nEl id debe tener este formato: XXXA";
+        sErrores += "\nEl id debe tener este formato: XXXA<br>";
         
         //Marcar error
         oForm.id_Asignatura.className = "form-control input-md error";
@@ -939,6 +959,6 @@ function validarBajaAsignatura(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
