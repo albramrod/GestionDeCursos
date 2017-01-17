@@ -246,7 +246,7 @@ function validarAltaAlumno(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 
@@ -395,7 +395,7 @@ function validarAltaProfesor(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarAltaGrupo(){
@@ -455,7 +455,7 @@ function validarAltaGrupo(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarAltaCurso(){
@@ -560,7 +560,7 @@ function validarAltaCurso(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarAltaCentro(){
@@ -641,7 +641,7 @@ function validarAltaCentro(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 }
 function validarAltaAsignatura(){
     var s="";
@@ -701,7 +701,7 @@ function validarAltaAsignatura(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 }
 /*------Funciones validad bajas*/
 function validarBajaAlumno(){
@@ -738,7 +738,7 @@ function validarBajaAlumno(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaProfesor(){
@@ -775,7 +775,7 @@ function validarBajaProfesor(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaCurso(){
@@ -816,7 +816,7 @@ function validarBajaCurso(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaGrupo(){
@@ -857,7 +857,7 @@ function validarBajaGrupo(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaCentro(){
@@ -898,7 +898,7 @@ function validarBajaCentro(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
 function validarBajaAsignatura(){
@@ -939,6 +939,6 @@ function validarBajaAsignatura(){
     }else{
         s="Sin errores";
     }
-    alert(s);
+    toastr.warning(s);
 
 }
